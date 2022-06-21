@@ -1,4 +1,4 @@
-
+import java.util.Scanner;
 /**
  * Escreva uma descrição da classe Main aqui.
  * 
@@ -7,7 +7,34 @@
  */
 public class Main{
     public static void main(String[] args){
-        Ave joao= new Ave();
+        String galo[]={"felps","joao"};
+        Ave joao = new Ave(galo);
+
+        Scanner in = new Scanner(System.in);
+        Anotacao nota1 = new Anotacao();
+
         
+        
+        System.out.println("ANOTAÇÕES:");
+
+        System.out.println("Data:");
+        nota1.anotar(0,in.next());
+
+        System.out.println("Hora:");
+        nota1.anotar(1,in.next());
+
+        System.out.println("Local:");
+        nota1.anotar(2,in.nextLine());
+
+        System.out.println("Ave:");
+        nota1.anotar(3,in.nextLine());
+
+
+        
+        
+        System.out.println(nota1.mostrar(0));
+        System.out.println(nota1.mostrar(1));
+        System.out.println(nota1.mostrar(2));
+        System.out.println(nota1.mostrar(3));
     }
 }

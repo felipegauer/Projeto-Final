@@ -6,7 +6,17 @@
  * @version (um número da versão ou uma data)
  */
 public class Ave{
-    public void nome(){
-        String aves[]=new String[9];
+    private String ave[];
+    public Ave(String[]p){
+        this.ave = p;
+    }
+    
+    public Ave(){
+        this.ave = null;
+    }
+    
+    public String mostrar(int i){
+        String b= this.ave[i];
+        return b;
     }
 }
