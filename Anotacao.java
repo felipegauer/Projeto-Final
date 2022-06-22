@@ -6,22 +6,21 @@
  * @version (a version number or a date)
  */
 public class Anotacao{
-    private String []nota;
+    private String nota;
     public Anotacao(){
-        this.nota = new String[4];
+        this.nota = " ";
     }
     
-    public Anotacao(String []p){
+    public Anotacao(String p){
         this.nota=p;
     }
     
-    public void anotar(int x ,String y){
-        this.nota[x]=y;
+    public void anotar(String y){
+        this.nota=y;
     }
     
-    public String mostrar(int i){
-        String x= nota [i];
-        return x;
+    public String mostrar(){
+        return this.nota;
     }
 }
 
