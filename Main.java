@@ -5,12 +5,13 @@ import java.util.Scanner;
  * @author (seu nome) 
  * @version (um número da versão ou uma data)
  */
+
 public class Main{
     public static void main(String[] args){
         Ave []joao={new Ave("joao"), new Ave("branco")};
         
         System.out.println(joao[0].mostrar());
-        System.out.println(joao[1].mostrar());
+        
         
         Scanner in = new Scanner(System.in);
         Anotacao nota1 = new Anotacao();
