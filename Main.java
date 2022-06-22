@@ -7,9 +7,11 @@ import java.util.Scanner;
  */
 public class Main{
     public static void main(String[] args){
-        String galo[]={"felps","joao"};
-        Ave joao = new Ave(galo);
-
+        Ave []joao={new Ave("joao"), new Ave("branco")};
+        
+        System.out.println(joao[0].mostrar());
+        System.out.println(joao[1].mostrar());
+        
         Scanner in = new Scanner(System.in);
         Anotacao nota1 = new Anotacao();
 
