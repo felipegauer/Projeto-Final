@@ -6,11 +6,11 @@ import java.util.Scanner;
  * @version (um número da versão ou uma data)
  */
 public class Main{
-    public static void catalogo(Ave []p1,Ave []p2){
+    public static void catalogo(Ave []p1,Ave []p2, Ave []p3, Ave []p4, Ave[]p5){
         System.out.println("\f");
                     System.out.println("\n\t        CATÁLOGO");
                     System.out.println("\t        --------");
-                    System.out.println("\tPássaro1:");
+                    System.out.println("\tPássaro 1:");
                     for(int i=0; i<p1.length;i++){
                         show(i);
                         System.out.printf(p1[i].mostrar());
@@ -18,14 +18,38 @@ public class Main{
                     }
 
                     System.out.println("----------------------------");
-                    System.out.println("\tPássaro2:");
+                    System.out.println("\tPássaro 2:");
                     for(int i=0; i<p2.length;i++){
                         show(i);
-                        System.out.printf(p1[i].mostrar());
+                        System.out.printf(p2[i].mostrar());
                         System.out.printf("%n");
                     }
                      System.out.println("----------------------------");
-    }
+                     
+                     System.out.println("\tPássaro 3:");
+                    for(int i=0; i<p3.length;i++){
+                        show(i);
+                        System.out.printf(p3[i].mostrar());
+                        System.out.printf("%n");
+                    }
+                     System.out.println("----------------------------");
+                     
+                     System.out.println("\tPássaro 4:");
+                    for(int i=0; i<p4.length;i++){
+                        show(i);
+                        System.out.printf(p4[i].mostrar());
+                        System.out.printf("%n");
+                    }
+                     System.out.println("----------------------------");
+                     
+                    System.out.println("\tPássaro 5:");
+                    for(int i=0; i<p5.length;i++){
+                        show(i);
+                        System.out.printf(p5[i].mostrar());
+                        System.out.printf("%n");
+                    }
+                     System.out.println("----------------------------");
+}
     public static void show(int i){
         switch(i){
             case 0:
@@ -57,13 +81,29 @@ public class Main{
 
     public static void main(String[] args){
         Ave []p1={new Ave("8"), new Ave("1"), new Ave("1"),
-                new Ave("João-Grande"), new Ave("Maguari Stork"), new Ave("Ciconia maguari"),
+                new Ave("João-grande"), new Ave("Maguari Stork"), new Ave("Ciconia maguari"),
                 new Ave("Ciconiidae"), new Ave("85cm")};
 
-        Ave []p2={new Ave("8"), new Ave("1"), new Ave("1"),
-                new Ave("João-Grande"), new Ave("Maguari Stork"), new Ave("Ciconia maguari"),
-                new Ave("Ciconiidae"), new Ave("85cm")};       
+        Ave []p2={new Ave("8"), new Ave("1"), new Ave("2"),
+                new Ave("Cabeça-seca"), new Ave("Wood Stork"), new Ave("Mycteria americana"),
+                new Ave("Ciconiidae"), new Ave("65cm")}; 
+                
+        Ave []p3={new Ave("8"), new Ave("2"), new Ave("1"),
+                new Ave("Cisne-de-pescoço-preto"), new Ave("Black-necked-swan"), new Ave("Cygnus melancoryphus"),
+                new Ave("Anatidae"), new Ave("80cm")};         
         
+                
+        Ave []p4={new Ave("8"), new Ave("2"), new Ave("2"),
+                new Ave("Capororoca"), new Ave("Coscoroba Swan"), new Ave("Cosocoroba coscoroba"),
+                new Ave("Anatidae"), new Ave("65cm")};
+                
+                
+        Ave []p5={new Ave ("8"), new Ave("3"), new Ave("1"), 
+            new Ave("Garça-branca-grande"), new Ave("Great Egret"), new Ave("Ardea alba"),
+                new Ave("Ardeidae"), new Ave("65cm")};
+            
+                
+                
         int op;
         Anotacao[] datas = new Anotacao[10];
         Anotacao[] aves = new Anotacao[10];
@@ -82,7 +122,7 @@ public class Main{
 
             switch(op){
                 case 1:
-                    catalogo(p1,p2);
+                    catalogo(p1,p2, p3, p4, p5);
                     break;
 
                 case 2:
@@ -96,7 +136,7 @@ public class Main{
                         System.out.println("Deseja abrir o catalogo?(s/n)");
                         escolha=in.next();
                         if(escolha.equals("s")){
-                            catalogo(p1,p2);
+                            catalogo(p1,p2, p3, p4, p5);
                             System.out.println("Data: " + datas[j].mostrar());
                         }
                         
