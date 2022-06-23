@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @author (seu nome)
  * @version (um número da versão ou uma data)
  */
-public class Main{
+public class FontanaApp{
     public static void catalogo(Ave []p1,Ave []p2){
         System.out.println("\f");
                     System.out.println("\n\t        CATÁLOGO");
