@@ -5,7 +5,7 @@ import java.util.Scanner;
  * @author (seu nome)
  * @version (um número da versão ou uma data)
  */
-public class Main{
+public class FontanaApp{
     public static void catalogo(Ave []p1,Ave []p2, Ave []p3, Ave []p4, Ave[]p5){
         System.out.println("\f");
                     System.out.println("\n\t        CATÁLOGO");
@@ -137,7 +137,7 @@ public class Main{
                         escolha=in.next();
                         if(escolha.equals("s")){
                             catalogo(p1,p2, p3, p4, p5);
-                            System.out.println("Data: " + datas[j].mostrar());
+                            System.out.println("Data: " + datas[j]);
                         }
                         
                         aves[j]=new Anotacao(in.next());

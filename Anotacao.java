@@ -6,22 +6,30 @@
  * @version (a version number or a date)
  */
 public class Anotacao{
-    private String nota;
+    private String data;
+    private String ave;
     
     public Anotacao(){
-        this.nota=null;
+        this.data=" ";
     }
     
     public Anotacao(String p){
-        this.nota=p;
+        this.data=p;
     }
     
     public void anotarData(String y){
-        this.nota=y;
+        this.data=y;
+    }
+        public void anotarAve(String y){
+        this.ave=y;
     }
     
-    public String mostrar(){
-        return this.nota;
+    public String mostrarData(){
+        return this.data;
+    }
+    
+    public String mostrarAve(){
+        return this.data;
     }
     
 }
