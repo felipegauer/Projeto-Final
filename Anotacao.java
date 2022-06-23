@@ -8,7 +8,7 @@
 public class Anotacao{
     private String nota;
     public Anotacao(){
-        this.nota = " ";
+        this.nota="";;
     }
     
     public Anotacao(String p){

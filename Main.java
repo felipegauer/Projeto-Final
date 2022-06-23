@@ -6,18 +6,98 @@ import java.util.Scanner;
  * @version (um número da versão ou uma data)
  */
 public class Main{
+    public static void show(int i){
+         switch(i){
+                            case 0:
+                                System.out.print("Página: ");
+                                break;
+                            case 1:
+                                System.out.print("Linha: ");
+                                break;
+                            case 2:
+                                System.out.print("Coluna: ");
+                                break;
+                            case 3:
+                                System.out.print("Nome(pt): ");
+                                break;
+                            case 4:
+                                System.out.print("Nome(ing): ");
+                                break;
+                            case 5:
+                                System.out.print("Nome(latin): ");
+                                break;
+                            case 6:
+                                System.out.print("Família: ");
+                                break;
+                            case 7:
+                                System.out.print("Tamanho: ");
+                                break;
+                        }
+    }
+    
     public static void main(String[] args){
-        Ave []P1={new Ave("Página 8"), new Ave("Linha 1"), new Ave("Coluna 1"),
+        Ave []p1={new Ave("8"), new Ave("1"), new Ave("1"),
         new Ave("João-Grande"), new Ave("Maguari Stork"), new Ave("Ciconia maguari"),
-        new Ave(" Família Ciconiidae"), new Ave("85cm")};
+        new Ave("Ciconiidae"), new Ave("85cm")};
+        
+        Ave []p2={new Ave("8"), new Ave("1"), new Ave("1"),
+        new Ave("João-Grande"), new Ave("Maguari Stork"), new Ave("Ciconia maguari"),
+        new Ave("Ciconiidae"), new Ave("85cm")};       
+
+        int op;
        
-        System.out.println(P1[0].mostrar());
-        System.out.println(P1[1].mostrar());
+        
        
         Scanner in = new Scanner(System.in);
-       
-
-       
+        do{
+            op=0;          
+            System.out.println("\n\t        MENU");
+            System.out.println("\t        ----");
+            System.out.println("\t1 - Consultar catálogo");
+            System.out.println("\t2 - Depositar");
+            System.out.println("\t3 - Retirar");
+            System.out.println("\t4 - Transferir");
+            System.out.println("\t9 - Sair");
+            op = in.nextInt();
+            
+            switch(op){
+                case 1:
+                    System.out.println("\f");
+                    System.out.println("\n\t        CATÁLOGO");
+                    System.out.println("\t        --------");
+                    System.out.println("\tPássaro1:");
+                    for(int i=0; i<p1.length;i++){
+                        show(i);
+                        System.out.printf(p1[i].mostrar());
+                        System.out.printf("%n");
+                    }
+                    
+                    System.out.println("----------------------------");
+                    System.out.println("\tPássaro2:");
+                    for(int i=0; i<p2.length;i++){
+                        show(i);
+                        System.out.printf(p1[i].mostrar());
+                        System.out.printf("%n");
+                    }
+                    break;
+                    
+                case 2:
+                     String nota="";
+                     
+                     
+                     int j = 0;
+                     
+                     do{
+                        nota = in.next();
+                        Anotacao []datas= {new Anotacao(nota)}; 
+                        System.out.println(datas[0].mostrar());
+                    
+                        }while(!nota.equals("0"));
+                     break;
+            
+            }
+            
+        }while(op!=9);
        
         System.out.println("ANOTAÇÕES:");
 
