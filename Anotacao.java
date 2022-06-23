@@ -7,15 +7,16 @@
  */
 public class Anotacao{
     private String nota;
+    
     public Anotacao(){
-        this.nota="";;
+        this.nota=null;
     }
     
     public Anotacao(String p){
         this.nota=p;
     }
     
-    public void anotar(String y){
+    public void anotarData(String y){
         this.nota=y;
     }
     
@@ -23,4 +24,3 @@ public class Anotacao{
         return this.nota;
     }
 }
-
