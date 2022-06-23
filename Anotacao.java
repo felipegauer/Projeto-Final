@@ -11,10 +11,14 @@ public class Anotacao{
     
     public Anotacao(){
         this.data=" ";
+        this.ave=" ";
     }
     
-    public Anotacao(String p){
+    public Anotacao(String p,int x){
+        if(x==0)
         this.data=p;
+        else
+        this.ave=p;
     }
     
     public void anotarData(String y){
