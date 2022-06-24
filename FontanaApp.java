@@ -66,42 +66,23 @@ public class FontanaApp{
     public static void comparacao(int op, Ave []p1, Ave []p2, Ave []p3, Ave []p4, Ave[]p5){
         String []aves={"-","-","-","-","-"};
         if(p1[op].mostrar().equals(p2[op].mostrar()) || p1[op].mostrar().equals(p3[op].mostrar()) || p1[op].mostrar().equals(p4[op].mostrar())||p1[op].mostrar().equals(p5[op].mostrar())){
-            
+            System.out.println("\tPássaro 1:");
+            catalogo(p1);
+            System.out.println("----------------------------");
         }
 
-        if(p1[op].mostrar().equals(p3[op].mostrar())){
-            aves[0]="Passaro 1";
-            aves[2]="Passaro 3";
+        
+
+        if(p2[op].mostrar().equals(p3[op].mostrar()) || p2[op].mostrar().equals(p1[op].mostrar())||p2[op].mostrar().equals(p4[op].mostrar())||p2[op].mostrar().equals(p5[op].mostrar())){
+            System.out.println("\tPássaro 2:");
+            catalogo(p2);
+            System.out.println("----------------------------");
         }
 
-        if(p1[op].mostrar().equals(p4[op].mostrar())){
-            aves[0]="Passaro 1";
-            aves[3]="Passaro 4";
-        }
-
-        if(p1[op].mostrar().equals(p5[op].mostrar())){
-            aves[0]="Passaro 1";
-            aves[4]="Passaro 5";
-        }
-
-        if(p2[op].mostrar().equals(p3[op].mostrar())){
-            aves[1]="Passaro 2";
-            aves[2]="Passaro 3";
-        }
-
-        if(p2[op].mostrar().equals(p4[op].mostrar())){
-            aves[1]="Passaro 2";
-            aves[3]="Passaro 4";
-        }
-
-        if(p2[op].mostrar().equals(p5[op].mostrar())){
-            aves[1]="Passaro 2";
-            aves[4]="Passaro 5";
-        }
-
-        if(p3[op].mostrar().equals(p4[op].mostrar())){
-            aves[2]="Passaro 3";
-            aves[3]="Passaro 4";
+        if(p3[op].mostrar().equals(p4[op].mostrar())||p3[op].mostrar().equals(p5[op].mostrar())||p3[op].mostrar().equals(p2[op].mostrar())||p3[op].mostrar().equals(p1[op].mostrar())){
+            System.out.println("\tPássaro 3:");
+            catalogo(p3);
+            System.out.println("----------------------------");
         }
 
         if(p3[op].mostrar().equals(p5[op].mostrar())){
@@ -151,8 +132,8 @@ public class FontanaApp{
             System.out.println("\t        ----");
             System.out.println("\t1 - Consultar catálogo");
             System.out.println("\t2 - Anotar");
-            System.out.println("\t3 - Consultar por campos");
-            System.out.println("\t4 - ");
+            System.out.println("\t3 - Consultar por campos(TODO)");
+            System.out.println("\t4 - Consultar aves avistadas por mes");
             System.out.println("\t9 - Sair");
             op = in.nextInt();
 
@@ -235,6 +216,10 @@ public class FontanaApp{
                     break;
                 }
                 break;
+                
+                case 4:
+                    
+                    break;
             }
 
         }while(op!=9);
