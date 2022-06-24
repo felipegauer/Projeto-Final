@@ -124,6 +124,9 @@ public class FontanaApp{
 
         int op;
         Anotacao[] notas = new Anotacao[10];
+        for (int j=0;j>notas.length;j++){
+            notas[j]= new Anotacao();
+        }
 
         Scanner in = new Scanner(System.in);
         do{
@@ -147,7 +150,8 @@ public class FontanaApp{
                 String escolha;
                 do{
                     System.out.println("Data");
-                    notas[j]=new Anotacao(in.next(),0);
+                    notas[j]= new Anotacao();
+                    notas[j].anotarData(in.next());
 
                     System.out.println("Ave");
                     System.out.println("Deseja abrir o catalogo?(s/n)");
@@ -157,7 +161,7 @@ public class FontanaApp{
                         System.out.println("Data: " + notas[j].mostrarData());
                     }
 
-                    notas[j]=new Anotacao(in.next(),1);
+                    notas[j].anotarAve(in.nextLine());
                     j++;
 
                     System.out.println("Deseja anotar de novo?(s/n)");
@@ -218,6 +222,21 @@ public class FontanaApp{
                 break;
                 
                 case 4:
+                    char k;
+                    char c;
+                    String d;
+                    for(int i=0;i<notas.length;i++){
+                        if(notas[i]==null)break;
+                        
+                           
+                            System.out.println(notas[i].mostrarData());
+                            k=notas[i].mostrarData().charAt(3);
+                            c=notas[i].mostrarData().charAt(4);
+                            d=Character.toString(k) + Character.toString(c);
+                            
+                            System.out.println(d);
+                        
+                    }
                     
                     break;
             }
