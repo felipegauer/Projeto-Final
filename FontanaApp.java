@@ -18,49 +18,50 @@ public class FontanaApp{
     public static void show(int i){
         switch(i){
             case 0:
-            System.out.print("Página: ");
-            break;
+                System.out.print("Página: ");
+                break;
             case 1:
-            System.out.print("Linha: ");
-            break;
+                System.out.print("Linha: ");
+                break;
             case 2:
-            System.out.print("Coluna: ");
-            break;
+                System.out.print("Coluna: ");
+                break;
             case 3:
-            System.out.print("Nome(pt): ");
-            break;
+                System.out.print("Nome(pt): ");
+                break;
             case 4:
-            System.out.print("Nome(ing): ");
-            break;
+                System.out.print("Nome(ing): ");
+                break;
             case 5:
-            System.out.print("Nome(latin): ");
-            break;
+                System.out.print("Nome(latin): ");
+                break;
             case 6:
-            System.out.print("Família: ");
-            break;
+                System.out.print("Família: ");
+                break;
             case 7:
-            System.out.print("Tamanho: ");
-            break;
+                System.out.print("Tamanho: ");
+                break;
         }
     }
+
     public static void showcatalogo( Ave []p1, Ave []p2, Ave []p3, Ave []p4, Ave[]p5){
         System.out.println("\f");
-                System.out.println("\n\t        CATÁLOGO");
-                System.out.println("\t        --------");
-                System.out.println("\tPássaro 1:");
-                catalogo(p1);
-                System.out.println("----------------------------");
-                System.out.println("\tPássaro 2:");
-                catalogo(p2);
-                System.out.println("----------------------------");
-                System.out.println("\tPássaro 3:");
-                catalogo(p3);
-                System.out.println("----------------------------");
-                System.out.println("\tPássaro 4:");
-                catalogo(p4);
-                System.out.println("----------------------------");
-                System.out.println("\tPássaro 5:");
-                catalogo(p5);
+        System.out.println("\n\t        CATÁLOGO");
+        System.out.println("\t        --------");
+        System.out.println("\tPássaro 1:");
+        catalogo(p1);
+        System.out.println("----------------------------");
+        System.out.println("\tPássaro 2:");
+        catalogo(p2);
+        System.out.println("----------------------------");
+        System.out.println("\tPássaro 3:");
+        catalogo(p3);
+        System.out.println("----------------------------");
+        System.out.println("\tPássaro 4:");
+        catalogo(p4);
+        System.out.println("----------------------------");
+        System.out.println("\tPássaro 5:");
+        catalogo(p5);
     }
 
     public static void comparacao(int op, Ave []p1, Ave []p2, Ave []p3, Ave []p4, Ave[]p5){
@@ -71,7 +72,6 @@ public class FontanaApp{
             System.out.println("----------------------------");
         }
 
-        
 
         if(p2[op].mostrar().equals(p3[op].mostrar()) || p2[op].mostrar().equals(p1[op].mostrar())||p2[op].mostrar().equals(p4[op].mostrar())||p2[op].mostrar().equals(p5[op].mostrar())){
             System.out.println("\tPássaro 2:");
@@ -100,6 +100,13 @@ public class FontanaApp{
                 System.out.println(aves[i]);
         }
     }
+    public static void meses(Anotacao[] notas,String p){
+        for(int i=0;i<notas.length;i++){
+            if(notas[i]==null)break;
+            else if(notas[i].mostrarMes().equals(p))
+                System.out.println(notas[i].mostrarAve());
+        }
+    }
 
     public static void main(String[] args){
         Ave []p1={new Ave("8"), new Ave("1"), new Ave("1"),
@@ -123,8 +130,9 @@ public class FontanaApp{
                 new Ave("Ardeidae"), new Ave("65cm")};
 
         int op;
+        int j = 0;
         Anotacao[] notas = new Anotacao[10];
-        for (int j=0;j>notas.length;j++){
+        for (int k=0;j>notas.length;j++){
             notas[j]= new Anotacao();
         }
 
@@ -142,103 +150,107 @@ public class FontanaApp{
 
             switch(op){
                 case 1:
-                showcatalogo(p1,p2,p3,p4,p5);
-                break;
+                    showcatalogo(p1,p2,p3,p4,p5);
+                    break;
 
                 case 2:
-                int j = 0;
-                String escolha;
-                do{
-                    System.out.println("Data");
-                    notas[j]= new Anotacao();
-                    notas[j].anotarData(in.next());
+                    
+                    String escolha;
+                    do{
+                        System.out.println("Data");
+                        notas[j]= new Anotacao();
+                        notas[j].anotarData(in.next());
 
-                    System.out.println("Ave");
-                    System.out.println("Deseja abrir o catalogo?(s/n)");
-                    escolha = in.next();
-                    if(escolha.equals("s")){
-                        showcatalogo(p1,p2,p3,p4,p5);;
-                        System.out.println("Data: " + notas[j].mostrarData());
-                    }
-                    System.out.println("Ave");
-                    notas[j].anotarAve(in.next());
-                    j++;
+                        System.out.println("Ave");
+                        System.out.println("Deseja abrir o catalogo?(s/n)");
+                        escolha = in.next();
+                        if(escolha.equals("s")){
+                            showcatalogo(p1,p2,p3,p4,p5);;
+                            System.out.println("Data: " + notas[j].mostrarData());
+                        }
+                        System.out.println("Ave");
+                        notas[j].anotarAve(in.next());
+                        j++;
 
-                    System.out.println("Deseja anotar de novo?(s/n)");
-                    escolha="";
-                    escolha=in.next();
-                }while(j<9 && !escolha.equals("n"));
-                break;
+                        System.out.println("Deseja anotar de novo?(s/n)");
+                        escolha="";
+                        escolha=in.next();
+                    }while(j<9 && !escolha.equals("n"));
+                    break;
 
                 case 3:
-                System.out.println("\n\t        Qual campo quer comparar?");
-                System.out.println("\t        -------------------------");
-                System.out.println("\t1 - Pagina");
-                System.out.println("\t2 - Linha");
-                System.out.println("\t3 - Coluna");
-                System.out.println("\t4 - Familia");
-                System.out.println("\t5 - Tamanho");
-                System.out.println("\t6 - Habitat");
+                    System.out.println("\n\t        Qual campo quer comparar?");
+                    System.out.println("\t        -------------------------");
+                    System.out.println("\t1 - Pagina");
+                    System.out.println("\t2 - Linha");
+                    System.out.println("\t3 - Coluna");
+                    System.out.println("\t4 - Familia");
+                    System.out.println("\t5 - Tamanho");
+                    System.out.println("\t6 - Habitat");
 
-                op=in.nextInt();
+                    op=in.nextInt();
 
-                switch(op){
-                    case 1:
-                    op=0;
-                    System.out.println("\t Passaros nas mesmas paginas:");
-                    comparacao(op, p1,p2, p3, p4, p5);
-                    break;
+                    switch(op){
+                        case 1:
+                            op=0;
+                            System.out.println("\t Passaros nas mesmas paginas:");
+                            comparacao(op, p1,p2, p3, p4, p5);
+                            break;
 
-                    case 2:
-                    op=1;
-                    System.out.println("\t Passaros na mesma linha:");
-                    comparacao(op, p1,p2, p3, p4, p5);
-                    break;
+                        case 2:
+                            op=1;
+                            System.out.println("\t Passaros na mesma linha:");
+                            comparacao(op, p1,p2, p3, p4, p5);
+                            break;
 
-                    case 3:
-                    op=2;
-                    System.out.println("\t Passaros na mesma coluna:");
-                    comparacao(op, p1,p2, p3, p4, p5);
-                    break;
+                        case 3:
+                            op=2;
+                            System.out.println("\t Passaros na mesma coluna:");
+                            comparacao(op, p1,p2, p3, p4, p5);
+                            break;
 
-                    case 4:
-                    op=6;
-                    System.out.println("\t Passaros da mesma familia:");
-                    comparacao(op, p1,p2, p3, p4, p5);
-                    break;
+                        case 4:
+                            op=6;
+                            System.out.println("\t Passaros da mesma familia:");
+                            comparacao(op, p1,p2, p3, p4, p5);
+                            break;
 
-                    case 5:
-                    op=7;
-                    System.out.println("\t Passaros com tamanhos iguais:");
-                    comparacao(op, p1,p2, p3, p4, p5);
-                    break;
+                        case 5:
+                            op=7;
+                            System.out.println("\t Passaros com tamanhos iguais:");
+                            comparacao(op, p1,p2, p3, p4, p5);
+                            break;
 
-                    case 6:
-                    //TODO
-                    //op=7;
-                    //comparacao(op, p1,p2, p3, p4, p5);
-                    break;
-                }
-                break;
-                
-                case 4:
-                    char k;
-                    char c;
-                    String d;
-                    for(int i=0;i<notas.length;i++){
-                        if(notas[i]==null)break;
-                            k=notas[i].mostrarData().charAt(3);
-                            c=notas[i].mostrarData().charAt(4);
-                            d=Character.toString(k) + Character.toString(c);
-                            if(d.equals("11")){
-                                System.out.println("Em novembro:");
-                                System.out.println(notas[i].mostrarAve());
-                            }
-                            
-                            System.out.println(d);
-                        
+                        case 6:
+                            //TODO
+                            //op=7;
+                            //comparacao(op, p1,p2, p3, p4, p5);
+                            break;
                     }
+                    break;
+
+                case 4:
+                    int c=0;
+                    System.out.println("\n\t        Qual mes quer?");
+                    System.out.println("\t        --------------");
+                    System.out.println("\t1 - Janeiro");
+                    System.out.println("\t2 - Fevereiro");
+                    System.out.println("\t3 - Março");
+                    System.out.println("\t4 - Abril");
+                    System.out.println("\t5 - Maio");
+                    System.out.println("\t6 - junho");
+                    System.out.println("\t7 - Julho");
+                    System.out.println("\t8 - Agosto");
+                    System.out.println("\t9 - Setembro");
+                    System.out.println("\t10 - Outubro");
+                    System.out.println("\t11 - Novembro");
+                    System.out.println("\t12 - Dezembro");
+                    c=in.nextInt();
                     
+                    switch(c){
+                        case 1:
+                            meses(notas,"janeiro");
+                    }
                     break;
             }
 

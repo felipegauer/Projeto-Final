@@ -25,21 +25,6 @@ public class Anotacao{
 
     public void anotarData(String y){
         this.data=y;
-    }
-
-    public void anotarAve(String y){
-        this.ave=y;
-    }
-
-    public String mostrarData(){
-        return this.data;
-    }
-
-    public String mostrarAve(){
-        return this.ave;
-    }
-
-    public String mes(){
         if(data==null) {throw new  IllegalArgumentException("Data null");}
         char k;
         int i;
@@ -101,6 +86,22 @@ public class Anotacao{
 
             }
         }else throw new  IllegalArgumentException("Mes inválido");
+    }
+
+    public void anotarAve(String y){
+        this.ave=y;
+    }
+
+    public String mostrarData(){
+        return this.data;
+
+    }
+
+    public String mostrarAve(){
+        return this.ave;
+    }
+
+    public String mostrarMes(){
         return this.mes;
     }
 }
