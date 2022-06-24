@@ -155,13 +155,13 @@ public class FontanaApp{
 
                     System.out.println("Ave");
                     System.out.println("Deseja abrir o catalogo?(s/n)");
-                    escolha=in.next();
+                    escolha = in.next();
                     if(escolha.equals("s")){
                         showcatalogo(p1,p2,p3,p4,p5);;
                         System.out.println("Data: " + notas[j].mostrarData());
                     }
-
-                    notas[j].anotarAve(in.nextLine());
+                    System.out.println("Ave");
+                    notas[j].anotarAve(in.next());
                     j++;
 
                     System.out.println("Deseja anotar de novo?(s/n)");
@@ -227,12 +227,13 @@ public class FontanaApp{
                     String d;
                     for(int i=0;i<notas.length;i++){
                         if(notas[i]==null)break;
-                        
-                           
-                            System.out.println(notas[i].mostrarData());
                             k=notas[i].mostrarData().charAt(3);
                             c=notas[i].mostrarData().charAt(4);
                             d=Character.toString(k) + Character.toString(c);
+                            if(d.equals("11")){
+                                System.out.println("Em novembro:");
+                                System.out.println(notas[i].mostrarAve());
+                            }
                             
                             System.out.println(d);
                         
