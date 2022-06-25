@@ -41,7 +41,7 @@ public class FontanaApp{
                 System.out.printf("%n");
                 break;
             case 5:
-                System.out.print("Nome(latin): ");
+                System.out.print("Nome(latim): ");
                 System.out.printf(aves[i].mostrarNomelatin());
                 System.out.printf("%n");
                 break;
@@ -85,7 +85,7 @@ public class FontanaApp{
     public static void meses(Anotacao[] notas,String p,Ave[] aves){
         for(int i=0;i<notas.length;i++){
             int j=0;
-            if(notas[i].mostrarAve()==null)break;
+            if(notas[i]==null)break;
             else if(notas[i].mostrarMes().equals(p)){
                 j= notas[i].mostrarAve(aves);
                 if(j==-1)System.out.println(notas[i].mostrarAve());
