@@ -79,7 +79,125 @@ public class FontanaApp{
     }
 
     public static void comparacao(int op, Ave []aves){
-        //TODO
+        switch(op) { 
+            case 1: 
+                String x[]={"-","-","-","-","-","-","-","-","-","-"};
+                for(int i = 0; i< aves.length; i++) {
+                    if (aves[i] ==null) break;
+                    for (int j = 0; j< aves.length; j++) {
+                        if (aves[i] ==null) break;
+                        if (aves[j] ==null) break;
+
+                        if (i!= j) {
+                            if (aves[i].mostrarPagina().equals(aves[j].mostrarPagina())) {
+                                x[i]="1";
+                                x[j]="1";
+                            }
+                        }
+                    }
+                }
+                for (int i = 0; i<x.length; i++) {
+                    if(x[i].equals("1")){
+                        catalogo(aves,i);
+                        System.out.println("----------------------------");
+                    }                                      
+                }
+                break;
+            case 2: 
+                String y[]={"-","-","-","-","-","-","-","-","-","-"};
+                for(int i = 0; i< aves.length; i++) {
+                    if (aves[i] ==null) break;
+                    for (int j = 0; j< aves.length; j++) {
+                        if (aves[i] ==null) break;
+                        if (aves[j] ==null) break;
+
+                        if (i!= j) {
+                            if (aves[i].mostrarLinha().equals(aves[j].mostrarLinha())) {
+                                y[i]="1";
+                                y[j]="1";
+                            }
+                        }
+                    }
+                }
+                for (int i = 0; i<y.length; i++) {
+                    if(y[i].equals("1")){
+                        catalogo(aves,i);
+                        System.out.println("----------------------------");
+                    }                                      
+                }
+                break;
+            case 3: 
+                String z[]={"-","-","-","-","-","-","-","-","-","-"};
+                for(int i = 0; i< aves.length; i++) {
+                    if (aves[i] ==null) break;
+                    for (int j = 0; j< aves.length; j++) {
+                        if (aves[i] ==null) break;
+                        if (aves[j] ==null) break;
+
+                        if (i!= j) {
+                            if (aves[i].mostrarColuna().equals(aves[j].mostrarColuna())) {
+                                z[i]="1";
+                                z[j]="1";
+                            }
+                        }
+                    }
+                }
+                for (int i = 0; i<z.length; i++) {
+                    if(z[i].equals("1")){
+                        catalogo(aves,i);
+                        System.out.println("----------------------------");
+                    }                                      
+                }
+                break;    
+            case 4: 
+                 String g[]={"-","-","-","-","-","-","-","-","-","-"};
+                for(int i = 0; i< aves.length; i++) {
+                    if (aves[i] ==null) break;
+                    for (int j = 0; j< aves.length; j++) {
+                        if (aves[i] ==null) break;
+                        if (aves[j] ==null) break;
+
+                        if (i!= j) {
+                            if (aves[i].mostrarFamilia().equals(aves[j].mostrarFamilia())) {
+                                g[i]="1";
+                                g[j]="1";
+                            }
+                        }
+                    }
+                }
+                for (int i = 0; i<g.length; i++) {
+                    if(g[i].equals("1")){
+                        catalogo(aves,i);
+                        System.out.println("----------------------------");
+                    }                                      
+                }
+                break;    
+            case 5: 
+                 String a[]={"-","-","-","-","-","-","-","-","-","-"};
+                for(int i = 0; i< aves.length; i++) {
+                    if (aves[i] ==null) break;
+                    for (int j = 0; j< aves.length; j++) {
+                        if (aves[i] ==null) break;
+                        if (aves[j] ==null) break;
+
+                        if (i!= j) {
+                            if (aves[i].mostrarTamanho().equals(aves[j].mostrarTamanho())) {
+                                a[i]="1";
+                                a[j]="1";
+                            }
+                        }
+                    }
+                }
+                for (int i = 0; i<a.length; i++) {
+                    if(a[i].equals("1")){
+                        catalogo(aves,i);
+                        System.out.println("----------------------------");
+                    }                                      
+                }
+                break;
+            case 6: 
+                break;   
+        }
     }
 
     public static void meses(Anotacao[] notas,String p,Ave[] aves){
@@ -111,6 +229,7 @@ public class FontanaApp{
         aves[3].caracteristicas("8","2","2","Capororoca","Coscoroba Swan","Cosocoroba coscoroba","Anatidae","65cm");
         aves[4]= new Ave();
         aves[4].caracteristicas("8","3","1","Garça-branca-grande","Great Egret","Ardea alba","Ardeidae","65cm");
+        
 
         int op;
         int j = 0;
@@ -175,31 +294,31 @@ public class FontanaApp{
 
                     switch(op){
                         case 1:
-                            op=0;
+
                             System.out.println("\t Passaros nas mesmas paginas:");
                             comparacao(op,aves);
                             break;
 
                         case 2:
-                            op=1;
+
                             System.out.println("\t Passaros na mesma linha:");
                             comparacao(op,aves);
                             break;
 
                         case 3:
-                            op=2;
+
                             System.out.println("\t Passaros na mesma coluna:");
                             comparacao(op,aves);
                             break;
 
                         case 4:
-                            op=6;
+
                             System.out.println("\t Passaros da mesma familia:");
                             comparacao(op,aves);
                             break;
 
                         case 5:
-                            op=7;
+
                             System.out.println("\t Passaros com tamanhos iguais:");
                             comparacao(op,aves);
                             break;
