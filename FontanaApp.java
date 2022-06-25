@@ -6,99 +6,80 @@ import java.util.Scanner;
  * @version (um número da versão ou uma data)
  */
 public class FontanaApp{
-    public static void catalogo(Ave []p1){
-        for(int i=0; i<p1.length;i++){
-            show(i);
-            System.out.printf(p1[i].mostrar());
-            System.out.printf("%n");
-        }
+    public static void catalogo(Ave []aves,int k){
+            for(int j=0;j<aves.length;j++){
+            show(j,k,aves);
+            }
 
     }
 
-    public static void show(int i){
-        switch(i){
+    public static void show(int j,  int i,Ave[] aves){
+        switch(j){
             case 0:
                 System.out.print("Página: ");
+                System.out.printf(aves[i].mostrarPagina());
+                System.out.printf("%n");
                 break;
             case 1:
                 System.out.print("Linha: ");
+                System.out.printf(aves[i].mostrarLinha());
+                System.out.printf("%n");
                 break;
             case 2:
                 System.out.print("Coluna: ");
+                System.out.printf(aves[i].mostrarColuna());
+                System.out.printf("%n");
                 break;
             case 3:
                 System.out.print("Nome(pt): ");
+                System.out.printf(aves[i].mostrarNome());
+                System.out.printf("%n");
                 break;
             case 4:
                 System.out.print("Nome(ing): ");
+                System.out.printf(aves[i].mostrarNomeing());
+                System.out.printf("%n");
                 break;
             case 5:
                 System.out.print("Nome(latin): ");
+                System.out.printf(aves[i].mostrarNomelatin());
+                System.out.printf("%n");
                 break;
             case 6:
                 System.out.print("Família: ");
+                System.out.printf(aves[i].mostrarFamilia());
+                System.out.printf("%n");
                 break;
             case 7:
                 System.out.print("Tamanho: ");
+                System.out.printf(aves[i].mostrarTamanho());
+                System.out.printf("%n");
                 break;
         }
     }
 
-    public static void showcatalogo( Ave []p1, Ave []p2, Ave []p3, Ave []p4, Ave[]p5){
+    public static void showcatalogo( Ave []aves){
         System.out.println("\f");
         System.out.println("\n\t        CATÁLOGO");
         System.out.println("\t        --------");
         System.out.println("\tPássaro 1:");
-        catalogo(p1);
+        catalogo(aves,0);
         System.out.println("----------------------------");
         System.out.println("\tPássaro 2:");
-        catalogo(p2);
+        catalogo(aves,1);
         System.out.println("----------------------------");
         System.out.println("\tPássaro 3:");
-        catalogo(p3);
+        catalogo(aves,2);
         System.out.println("----------------------------");
         System.out.println("\tPássaro 4:");
-        catalogo(p4);
+        catalogo(aves,3);
         System.out.println("----------------------------");
         System.out.println("\tPássaro 5:");
-        catalogo(p5);
+        catalogo(aves,4);
     }
 
-    public static void comparacao(int op, Ave []p1, Ave []p2, Ave []p3, Ave []p4, Ave[]p5){
-        String []aves={"-","-","-","-","-"};
-        if(p1[op].mostrar().equals(p2[op].mostrar()) || p1[op].mostrar().equals(p3[op].mostrar()) || p1[op].mostrar().equals(p4[op].mostrar())||p1[op].mostrar().equals(p5[op].mostrar())){
-            System.out.println("\tPássaro 1:");
-            catalogo(p1);
-            System.out.println("----------------------------");
-        }
-
-
-        if(p2[op].mostrar().equals(p3[op].mostrar()) || p2[op].mostrar().equals(p1[op].mostrar())||p2[op].mostrar().equals(p4[op].mostrar())||p2[op].mostrar().equals(p5[op].mostrar())){
-            System.out.println("\tPássaro 2:");
-            catalogo(p2);
-            System.out.println("----------------------------");
-        }
-
-        if(p3[op].mostrar().equals(p4[op].mostrar())||p3[op].mostrar().equals(p5[op].mostrar())||p3[op].mostrar().equals(p2[op].mostrar())||p3[op].mostrar().equals(p1[op].mostrar())){
-            System.out.println("\tPássaro 3:");
-            catalogo(p3);
-            System.out.println("----------------------------");
-        }
-
-        if(p3[op].mostrar().equals(p5[op].mostrar())){
-            aves[2]="Passaro 3";
-            aves[4]="Passaro 5";
-        }
-
-        if(p4[op].mostrar().equals(p5[op].mostrar())){
-            aves[3]="Passaro 4";
-            aves[4]="Passaro 5";
-        }
-
-        for(int i=0;i<aves.length;i++){
-            if(!aves[i].equals("-"))
-                System.out.println(aves[i]);
-        }
+    public static void comparacao(int op, Ave []aves){
+        
     }
     public static void meses(Anotacao[] notas,String p){
         for(int i=0;i<notas.length;i++){
@@ -109,33 +90,19 @@ public class FontanaApp{
     }
 
     public static void main(String[] args){
-        Ave []p1={new Ave("8"), new Ave("1"), new Ave("1"),
-                new Ave("João-grande"), new Ave("Maguari Stork"), new Ave("Ciconia maguari"),
-                new Ave("Ciconiidae"), new Ave("85cm")};
-
-        Ave []p2={new Ave("8"), new Ave("1"), new Ave("2"),
-                new Ave("Cabeça-seca"), new Ave("Wood Stork"), new Ave("Mycteria americana"),
-                new Ave("Ciconiidae"), new Ave("65cm")}; 
-
-        Ave []p3={new Ave("8"), new Ave("2"), new Ave("1"),
-                new Ave("Cisne-de-pescoço-preto"), new Ave("Black-necked-swan"), new Ave("Cygnus melancoryphus"),
-                new Ave("Anatidae"), new Ave("80cm")};         
-
-        Ave []p4={new Ave("8"), new Ave("2"), new Ave("2"),
-                new Ave("Capororoca"), new Ave("Coscoroba Swan"), new Ave("Cosocoroba coscoroba"),
-                new Ave("Anatidae"), new Ave("65cm")};
-
-        Ave []p5={new Ave ("8"), new Ave("3"), new Ave("1"), 
-                new Ave("Garça-branca-grande"), new Ave("Great Egret"), new Ave("Ardea alba"),
-                new Ave("Ardeidae"), new Ave("65cm")};
                 
         Ave[] aves=new Ave[10];
-        for (int k=0;k>aves.length;k++){
-            aves[k]= new Ave();
-        }
         
-        aves[0].nome("João-grande","Maguari Stork","Ciconia maguari");
-        aves[0].loc("8","1","1");
+        aves[0]= new Ave();
+        aves[0].caracteristicas("8","1","1","João-grande","Maguari Stork","Ciconia maguari","Ciconiidae","85cm");
+        aves[1]= new Ave();
+        aves[1].caracteristicas("8","1","2","Cabeça-seca","Wood Stork","Mycteria americana","Ciconiidae","65cm");
+        aves[2]= new Ave();
+        aves[2].caracteristicas("8","2","1","Cisne-de-pescoço-preto","Black-necked-swan","Cygnus melancoryphus","Anatidae","80cm");
+        aves[3]= new Ave();
+        aves[3].caracteristicas("8","2","2","Capororoca","Coscoroba Swan","Cosocoroba coscoroba","Anatidae","65cm");
+        aves[4]= new Ave();
+        aves[4].caracteristicas("8","3","1","Garça-branca-grande","Great Egret","Ardea alba","Ardeidae","65cm");
         
 
         int op;
@@ -159,7 +126,7 @@ public class FontanaApp{
 
             switch(op){
                 case 1:
-                    showcatalogo(p1,p2,p3,p4,p5);
+                    showcatalogo(aves);
                     break;
 
                 case 2:
@@ -174,7 +141,7 @@ public class FontanaApp{
                         System.out.println("Deseja abrir o catalogo?(s/n)");
                         escolha = in.next();
                         if(escolha.equals("s")){
-                            showcatalogo(p1,p2,p3,p4,p5);;
+                            showcatalogo(aves);;
                             System.out.println("Data: " + notas[j].mostrarData());
                         }
                         System.out.println("Ave");
@@ -203,31 +170,31 @@ public class FontanaApp{
                         case 1:
                             op=0;
                             System.out.println("\t Passaros nas mesmas paginas:");
-                            comparacao(op, p1,p2, p3, p4, p5);
+                            comparacao(op,aves);
                             break;
 
                         case 2:
                             op=1;
                             System.out.println("\t Passaros na mesma linha:");
-                            comparacao(op, p1,p2, p3, p4, p5);
+                            comparacao(op,aves);
                             break;
 
                         case 3:
                             op=2;
                             System.out.println("\t Passaros na mesma coluna:");
-                            comparacao(op, p1,p2, p3, p4, p5);
+                            comparacao(op,aves);
                             break;
 
                         case 4:
                             op=6;
                             System.out.println("\t Passaros da mesma familia:");
-                            comparacao(op, p1,p2, p3, p4, p5);
+                            comparacao(op,aves);
                             break;
 
                         case 5:
                             op=7;
                             System.out.println("\t Passaros com tamanhos iguais:");
-                            comparacao(op, p1,p2, p3, p4, p5);
+                            comparacao(op,aves);
                             break;
 
                         case 6:
@@ -259,11 +226,44 @@ public class FontanaApp{
                     switch(c){
                         case 1:
                             meses(notas,"janeiro");
+                            break;
+                        case 2:
+                            meses(notas,"fevereiro");
+                            break;
+                        case 3:
+                            meses(notas,"março");
+                            break;
+                        case 4:
+                            meses(notas,"abril");
+                            break;
+                        case 5:
+                            meses(notas,"maio");
+                            break;
+                        case 6:
+                            meses(notas,"junho");
+                            break;
+                        case 7:
+                            meses(notas,"julho");
+                            break;
+                        case 8:
+                            meses(notas,"agosto");
+                            break;
+                        case 9:
+                            meses(notas,"setembro");
+                            break;
+                        case 10:
+                            meses(notas,"outubro");
+                            break;
+                        case 11:
+                            meses(notas,"novembro");
+                            break;
+                        case 12:
+                            meses(notas,"dezembro");
+                            break;
                     }
                     break;
             }
 
         }while(op!=9);
-
     }
 }

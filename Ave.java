@@ -14,6 +14,7 @@ public class Ave{
     private String nomept;
     private String nomeing;
     private String nomelatin;
+    private String familia;
     private String tamanho;
     public Ave(String p){
         this.ave = p;
@@ -40,24 +41,43 @@ public class Ave{
         return mes;
     }
     
-    public void nome(String p,String y,String x){
-        this.nomept=p;
-        this.nomeing=y;
-        this.nomelatin=x;
-    }
-    
-    public void loc(String p,String y,String x){
-        this.pagina=p;
-        this.linha=y;
-        this.coluna=x;
-    }
-    
-    public void tamanho(String p){
-        this.tamanho=p;
+    public void caracteristicas(String a, String b, String c, String d, String e, String f, String g,String h){
+        this.pagina=a;
+        this.linha=b;
+        this.coluna=c;
+        this.nomept=d;
+        this.nomeing=e;
+        this.nomelatin=f;
+        this.familia=g;
+        this.tamanho=h;
     }
     
     public String mostrarNome(){
         return this.nomept;
+    }
+    
+    public String mostrarNomeing(){
+        return this.nomeing;
+    }
+    
+    public String mostrarNomelatin(){
+        return this.nomelatin;
+    }
+    
+    public String mostrarPagina(){
+        return this.pagina;
+    }
+    
+    public String mostrarLinha(){
+        return this.linha;
+    }
+    
+    public String mostrarColuna(){
+        return this.coluna;
+    }
+    
+    public String mostrarFamilia(){
+        return this.familia;
     }
     
     public String mostrarTamanho(){
