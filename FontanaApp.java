@@ -236,8 +236,12 @@ public class FontanaApp{
         aves[9] = new Ave();
         aves[9].caracteristicas("10","2","1","Trinta-réis-anão","Yellow-Billed Tern","Sternula superciliaris","Sternidae","22cm");
         
+        String arq="notacao.txt";
+        String x="";
+        x=Arquivo.Read(arq);
         int op;
         int j = 0;
+        int k=0;
         Anotacao[] notas = new Anotacao[10];                
 
         Scanner in = new Scanner(System.in);
@@ -249,6 +253,7 @@ public class FontanaApp{
             System.out.println("\t2 - Anotar");
             System.out.println("\t3 - Consultar por campos(TODO)");
             System.out.println("\t4 - Consultar aves avistadas por mes");
+            System.out.println("\t5 - Gravar passáros para um arquivo.txt");
             System.out.println("\t9 - Sair");
             op = in.nextInt();
 
@@ -403,6 +408,22 @@ public class FontanaApp{
                             break;
                     }
                     break;
+                
+                case 5:
+                    System.out.println("\f\t        Copiando arquivo");
+                    while(notas[k]!=null){
+                        x+="Ave: "+notas[k].mostrarAve()+"  Data: " + notas[k].mostrarData()+"\n";
+                        if(Arquivo.write(arq,x))
+                            System.out.println("Arquivo gravado cm sucesso!");
+                        else
+                            System.out.println("falha");
+                        k++;
+                    }
+                    break;
+                case 6:
+                    System.out.println("\f\t        Arquivo");
+                    System.out.println(x);
+                    
             }
 
         }while(op!=9);
