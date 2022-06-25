@@ -62,18 +62,15 @@ public class FontanaApp{
         System.out.println("\f");
         System.out.println("\n\t        CATÁLOGO");
         System.out.println("\t        --------");
-        
+
         for(int i=0;i<aves.length;i++){
             System.out.println("\tPássaro "+ (i+1) + ":"); 
             catalogo(aves,i);
             System.out.println("----------------------------");
         }
 
-    
     }
-
     
-
     public static void comparacao(int op, Ave []aves){
         switch(op) { 
             case 1: 
@@ -146,7 +143,7 @@ public class FontanaApp{
                 }
                 break;    
             case 4: 
-                 String g[]={"-","-","-","-","-","-","-","-","-","-"};
+                String g[]={"-","-","-","-","-","-","-","-","-","-"};
                 for(int i = 0; i< aves.length; i++) {
                     if (aves[i] ==null) break;
                     for (int j = 0; j< aves.length; j++) {
@@ -169,7 +166,7 @@ public class FontanaApp{
                 }
                 break;    
             case 5: 
-                 String a[]={"-","-","-","-","-","-","-","-","-","-"};
+                String a[]={"-","-","-","-","-","-","-","-","-","-"};
                 for(int i = 0; i< aves.length; i++) {
                     if (aves[i] ==null) break;
                     for (int j = 0; j< aves.length; j++) {
@@ -235,9 +232,9 @@ public class FontanaApp{
         aves[8].caracteristicas("10","1","2","Pernilongo-de-costas-brancas","White-necked-Stilt","Himantopus melanurus","Recurvirostridae","35cm");
         aves[9] = new Ave();
         aves[9].caracteristicas("10","2","1","Trinta-réis-anão","Yellow-Billed Tern","Sternula superciliaris","Sternidae","22cm");
-        
+
         String arq="notacao.txt";
-        String x="";
+        String x;
         x=Arquivo.Read(arq);
         int op;
         int j = 0;
@@ -254,6 +251,8 @@ public class FontanaApp{
             System.out.println("\t3 - Consultar por campos(TODO)");
             System.out.println("\t4 - Consultar aves avistadas por mes");
             System.out.println("\t5 - Gravar passáros para um arquivo.txt");
+            System.out.println("\t6 - Ler Anotações antigas");
+            System.out.println("\t7 - Apagar arquivo");
             System.out.println("\t9 - Sair");
             op = in.nextInt();
 
@@ -269,7 +268,7 @@ public class FontanaApp{
                         System.out.println("\fData(dd/mm/aaaa)");
                         notas[j]= new Anotacao();
                         notas[j].anotarData(in.next());
-                       
+
                         System.out.println("Deseja abrir o catalogo?(s/n)");
                         escolha = in.next();
                         if(escolha.equals("s")){
@@ -359,18 +358,22 @@ public class FontanaApp{
 
                     switch(c){
                         case 1:
+                            System.out.println("\f");
                             System.out.println("Passáros em janeiro:");
                             meses(notas,"janeiro",aves);
                             break;
                         case 2:
+                            System.out.println("\f");
                             System.out.println("Passáros em fevereiro:");
                             meses(notas,"fevereiro",aves);
                             break;
                         case 3:
+                            System.out.println("\f");
                             System.out.println("Passáros em março:");
                             meses(notas,"março",aves);
                             break;
                         case 4:
+                            System.out.println("\f");
                             System.out.println("Passáros em abril:");
                             meses(notas,"abril",aves);
                             break;
@@ -379,40 +382,51 @@ public class FontanaApp{
                             meses(notas,"maio",aves);
                             break;
                         case 6:
+                            System.out.println("\f");
                             System.out.println("Passáros em junho:");
                             meses(notas,"junho",aves);
                             break;
                         case 7:
+                            System.out.println("\f");
                             System.out.println("Passáros em julho:");
                             meses(notas,"julho",aves);
                             break;
                         case 8:
+                            System.out.println("\f");
                             System.out.println("Passáros em agosto:");
                             meses(notas,"agosto",aves);
                             break;
                         case 9:
+                            System.out.println("\f");
                             System.out.println("Passáros em setembro:");
                             meses(notas,"setembro",aves);
                             break;
                         case 10:
+                            System.out.println("\f");
                             System.out.println("Passáros em outubro:");
                             meses(notas,"outubro",aves);
                             break;
                         case 11:
+                            System.out.println("\f");
                             System.out.println("Passáros em novembro:");
                             meses(notas,"novembro",aves);
                             break;
                         case 12:
+                            System.out.println("\f");
                             System.out.println("Passáros em dezembro:");
                             meses(notas,"dezembro",aves);
                             break;
                     }
                     break;
-                
+
                 case 5:
+                    int a=-1;
                     System.out.println("\f\t        Copiando arquivo");
                     while(notas[k]!=null){
-                        x+="Ave: "+notas[k].mostrarAve()+"  Data: " + notas[k].mostrarData()+"\n";
+                        a=notas[k].mostrarAve(aves);
+                        if(a!=-1 && a<aves.length) x+="Ave: "+aves[a].mostrarNome()+"  Data: " + notas[k].mostrarData()+"\n";
+                        else
+                            x+="Ave: "+notas[k].mostrarAve()+"  Data: " + notas[k].mostrarData()+"\n";
                         if(Arquivo.write(arq,x))
                             System.out.println("Arquivo gravado cm sucesso!");
                         else
@@ -423,7 +437,20 @@ public class FontanaApp{
                 case 6:
                     System.out.println("\f\t        Arquivo");
                     System.out.println(x);
+                    break;
                     
+                case 7:
+                    System.out.println("\fTem certeza que deseja apagar o arquivo?(s/n)");
+                    String apagar=in.next();
+                    if(apagar.equals("s")){
+                        x="";
+                    if(Arquivo.write(arq,x))
+                            System.out.println("Arquivo apagado!");
+                        else
+                            System.out.println("falha");
+                    }
+                    System.out.println("\f");
+                    break;
             }
 
         }while(op!=9);
