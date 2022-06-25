@@ -238,10 +238,7 @@ public class FontanaApp{
         
         int op;
         int j = 0;
-        Anotacao[] notas = new Anotacao[10];
-        for (int k=0;k>notas.length;k++){
-            notas[k]= new Anotacao();
-        }
+        Anotacao[] notas = new Anotacao[10];                
 
         Scanner in = new Scanner(System.in);
         do{
@@ -267,15 +264,16 @@ public class FontanaApp{
                         System.out.println("Data");
                         notas[j]= new Anotacao();
                         notas[j].anotarData(in.next());
-
-                        System.out.println("Ave");
+                       
                         System.out.println("Deseja abrir o catalogo?(s/n)");
                         escolha = in.next();
                         if(escolha.equals("s")){
-                            showcatalogo(aves);;
+                            showcatalogo(aves);
+                            System.out.println("-------------------------");
                             System.out.println("Data: " + notas[j].mostrarData());
                         }
-                        System.out.println("Ave");
+                        System.out.println("-------------------------");
+                        System.out.println("Ave");                       
                         notas[j].anotarAve(in.next());
                         j++;
 
