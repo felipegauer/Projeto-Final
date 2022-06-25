@@ -62,21 +62,17 @@ public class FontanaApp{
         System.out.println("\f");
         System.out.println("\n\t        CATÁLOGO");
         System.out.println("\t        --------");
-        System.out.println("\tPássaro 1:");
-        catalogo(aves,0);
-        System.out.println("----------------------------");
-        System.out.println("\tPássaro 2:");
-        catalogo(aves,1);
-        System.out.println("----------------------------");
-        System.out.println("\tPássaro 3:");
-        catalogo(aves,2);
-        System.out.println("----------------------------");
-        System.out.println("\tPássaro 4:");
-        catalogo(aves,3);
-        System.out.println("----------------------------");
-        System.out.println("\tPássaro 5:");
-        catalogo(aves,4);
+        
+        for(int i=0;i<aves.length;i++){
+            System.out.println("\tPássaro "+ (i+1) + ":"); 
+            catalogo(aves,i);
+            System.out.println("----------------------------");
+        }
+
+    
     }
+
+    
 
     public static void comparacao(int op, Ave []aves){
         switch(op) { 
