@@ -82,11 +82,18 @@ public class FontanaApp{
 
     }
 
-    public static void meses(Anotacao[] notas,String p){
+    public static void meses(Anotacao[] notas,String p,Ave[] aves){
         for(int i=0;i<notas.length;i++){
+            int j=0;
             if(notas[i]==null)break;
-            else if(notas[i].mostrarMes().equals(p))
-                System.out.println(notas[i].mostrarAve());
+            else if(notas[i].mostrarMes().equals(p)){
+                j= notas[i].mostrarAve(aves);
+                if(j==-1)System.out.println(notas[i].mostrarAve());
+                else {
+                    catalogo(aves,i);
+                    System.out.println("----------------------------");
+                }
+            }
         }
     }
 
@@ -226,51 +233,51 @@ public class FontanaApp{
                     switch(c){
                         case 1:
                             System.out.println("Passáros em janeiro:");
-                            meses(notas,"janeiro");
+                            meses(notas,"janeiro",aves);
                             break;
                         case 2:
                             System.out.println("Passáros em fevereiro:");
-                            meses(notas,"fevereiro");
+                            meses(notas,"fevereiro",aves);
                             break;
                         case 3:
                             System.out.println("Passáros em março:");
-                            meses(notas,"março");
+                            meses(notas,"março",aves);
                             break;
                         case 4:
                             System.out.println("Passáros em abril:");
-                            meses(notas,"abril");
+                            meses(notas,"abril",aves);
                             break;
                         case 5:
                             System.out.println("Passáros em maio:");
-                            meses(notas,"maio");
+                            meses(notas,"maio",aves);
                             break;
                         case 6:
                             System.out.println("Passáros em junho:");
-                            meses(notas,"junho");
+                            meses(notas,"junho",aves);
                             break;
                         case 7:
                             System.out.println("Passáros em julho:");
-                            meses(notas,"julho");
+                            meses(notas,"julho",aves);
                             break;
                         case 8:
                             System.out.println("Passáros em agosto:");
-                            meses(notas,"agosto");
+                            meses(notas,"agosto",aves);
                             break;
                         case 9:
                             System.out.println("Passáros em setembro:");
-                            meses(notas,"setembro");
+                            meses(notas,"setembro",aves);
                             break;
                         case 10:
                             System.out.println("Passáros em outubro:");
-                            meses(notas,"outubro");
+                            meses(notas,"outubro",aves);
                             break;
                         case 11:
                             System.out.println("Passáros em novembro:");
-                            meses(notas,"novembro");
+                            meses(notas,"novembro",aves);
                             break;
                         case 12:
                             System.out.println("Passáros em dezembro:");
-                            meses(notas,"dezembro");
+                            meses(notas,"dezembro",aves);
                             break;
                     }
                     break;

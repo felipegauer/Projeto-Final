@@ -100,6 +100,16 @@ public class Anotacao{
     public String mostrarAve(){
         return this.ave;
     }
+    
+    public int mostrarAve(Ave []aves){
+        for(int i=0;i<aves.length;i++){
+            if(aves[i].mostrarNome()==null)break;
+            if(aves[i].mostrarNome().contains(this.ave))return i;
+            else if(aves[i].mostrarNomeing().contains(this.ave))return i;
+            else if(aves[i].mostrarNomelatin().contains(this.ave))return i;
+        }
+        return -1; 
+    }
 
     public String mostrarMes(){
         return this.mes;
