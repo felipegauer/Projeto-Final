@@ -229,8 +229,17 @@ public class FontanaApp{
         aves[3].caracteristicas("8","2","2","Capororoca","Coscoroba Swan","Cosocoroba coscoroba","Anatidae","65cm");
         aves[4]= new Ave();
         aves[4].caracteristicas("8","3","1","Garça-branca-grande","Great Egret","Ardea alba","Ardeidae","65cm");
+        aves[5] = new Ave();
+        aves[5].caracteristicas("9","1","2","Àguia-pescadora","Osprey","Pandion haliaetus","Pandionidae","57cm");
+        aves[6] = new Ave();
+        aves[6].caracteristicas("9","2","1","Gavião-de-rabo-branco","White-tailed Hawk","Geranoaetus albicaudatus","Accipitridae","48-58cm");
+        aves[7] = new Ave();
+        aves[7].caracteristicas("9","3","2","Gaivota-de-cabeça-cinza","Grey-headed Gull","Chroicocephalus cirrocephalus","Laridae","38cm");
+        aves[8] = new Ave();
+        aves[8].caracteristicas("10","1","2","Pernilongo-de-costas-brancas","White-necked-Stilt","Himantopus melanurus","Recurvirostridae","35cm");
+        aves[9] = new Ave();
+        aves[9].caracteristicas("10","2","1","Trinta-réis-anão","Yellow-Billed Tern","Sternula superciliaris","Sternidae","22cm");
         
-
         int op;
         int j = 0;
         Anotacao[] notas = new Anotacao[10];
