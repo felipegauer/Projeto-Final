@@ -261,7 +261,7 @@ public class FontanaApp{
 
                     String escolha;
                     do{
-                        System.out.println("Data");
+                        System.out.println("\fData(dd/mm/aaaa)");
                         notas[j]= new Anotacao();
                         notas[j].anotarData(in.next());
                        
@@ -284,7 +284,7 @@ public class FontanaApp{
                     break;
 
                 case 3:
-                    System.out.println("\n\t        Qual campo quer comparar?");
+                    System.out.println("\f\n\t        Qual campo quer comparar?");
                     System.out.println("\t        -------------------------");
                     System.out.println("\t1 - Pagina");
                     System.out.println("\t2 - Linha");
@@ -298,31 +298,31 @@ public class FontanaApp{
                     switch(op){
                         case 1:
 
-                            System.out.println("\t Passaros nas mesmas paginas:");
+                            System.out.println("\f\t Passaros nas mesmas paginas:");
                             comparacao(op,aves);
                             break;
 
                         case 2:
 
-                            System.out.println("\t Passaros na mesma linha:");
+                            System.out.println("\f\t Passaros na mesma linha:");
                             comparacao(op,aves);
                             break;
 
                         case 3:
 
-                            System.out.println("\t Passaros na mesma coluna:");
+                            System.out.println("\f\t Passaros na mesma coluna:");
                             comparacao(op,aves);
                             break;
 
                         case 4:
 
-                            System.out.println("\t Passaros da mesma familia:");
+                            System.out.println("\f\t Passaros da mesma familia:");
                             comparacao(op,aves);
                             break;
 
                         case 5:
 
-                            System.out.println("\t Passaros com tamanhos iguais:");
+                            System.out.println("\f\t Passaros com tamanhos iguais:");
                             comparacao(op,aves);
                             break;
 
@@ -336,7 +336,7 @@ public class FontanaApp{
 
                 case 4:
                     int c=0;
-                    System.out.println("\n\t        Qual mes quer?");
+                    System.out.println("\f\n\t        Qual mes quer?");
                     System.out.println("\t        --------------");
                     System.out.println("\t1 - Janeiro");
                     System.out.println("\t2 - Fevereiro");
