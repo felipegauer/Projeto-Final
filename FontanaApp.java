@@ -128,12 +128,21 @@ public class FontanaApp{
         Ave []p5={new Ave ("8"), new Ave("3"), new Ave("1"), 
                 new Ave("Garça-branca-grande"), new Ave("Great Egret"), new Ave("Ardea alba"),
                 new Ave("Ardeidae"), new Ave("65cm")};
+                
+        Ave[] aves=new Ave[10];
+        for (int k=0;k>aves.length;k++){
+            aves[k]= new Ave();
+        }
+        
+        aves[0].nome("João-grande","Maguari Stork","Ciconia maguari");
+        aves[0].loc("8","1","1");
+        
 
         int op;
         int j = 0;
         Anotacao[] notas = new Anotacao[10];
-        for (int k=0;j>notas.length;j++){
-            notas[j]= new Anotacao();
+        for (int k=0;k>notas.length;k++){
+            notas[k]= new Anotacao();
         }
 
         Scanner in = new Scanner(System.in);
