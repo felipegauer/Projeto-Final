@@ -79,18 +79,18 @@ public class FontanaApp{
     }
 
     public static void comparacao(int op, Ave []aves){
-
+        //TODO
     }
 
     public static void meses(Anotacao[] notas,String p,Ave[] aves){
         for(int i=0;i<notas.length;i++){
             int j=0;
-            if(notas[i]==null)break;
+            if(notas[i].mostrarAve()==null)break;
             else if(notas[i].mostrarMes().equals(p)){
                 j= notas[i].mostrarAve(aves);
                 if(j==-1)System.out.println(notas[i].mostrarAve());
                 else {
-                    catalogo(aves,i);
+                    catalogo(aves,j);
                     System.out.println("----------------------------");
                 }
             }
@@ -284,5 +284,6 @@ public class FontanaApp{
             }
 
         }while(op!=9);
+        System.out.println("\f\t Obrigado por usar nosso programa!");
     }
 }
