@@ -500,7 +500,7 @@ public class FontanaApp{
                  * Apaga o arquivo
                  */
                 case 7:
-                    System.out.println("\fTem certeza que deseja apagar o arquivo?(s/n)");
+                    System.out.println("\fTem certeza que deseja apagar o arquivo?(s/n) :(");
                     String apagar=in.next();
                     if(apagar.equals("s")){
                         x="";
