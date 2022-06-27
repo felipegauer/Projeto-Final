@@ -2,9 +2,17 @@ import java.util.Scanner;
 /**
  * Escreva uma descrição da classe Main aqui.
  *
- * @author (seu nome)
- * @version (um número da versão ou uma data)
+ * @author (Felipe Gauer)
+ * @author (Pedro Ribeiro)
+ * @author (Rodrigo Sandler)
+ * @version (27/06/2022)
  */
+
+/**
+ * Chama o catálogo de uma ave específica para a tela, dando um print,
+ * usando 'show'
+ */
+
 public class FontanaApp{
     public static void catalogo(Ave []aves,int k){
         for(int j=0;j<aves.length;j++){
@@ -13,6 +21,10 @@ public class FontanaApp{
 
     }
 
+    /**
+     * Mostra todas as características das aves escolhidas na tela,
+     * novamente usando o print
+     */
     public static void show(int j,  int i,Ave[] aves){
         switch(j){
             case 0:
@@ -58,6 +70,10 @@ public class FontanaApp{
         }
     }
 
+    /**
+     * Imprime o layout do catálogo no display do menu,
+     * e chama os outros dois métodos
+     */
     public static void showcatalogo( Ave []aves){
         System.out.println("\f");
         System.out.println("\n\t        CATÁLOGO");
@@ -71,6 +87,13 @@ public class FontanaApp{
 
     }
     
+    /**
+     * Compara as aves descrita pelo observador, pra caso eles forem iguais,
+     * serem armazenadas como sendo o mesmo pássaro na mesma posição 
+     * dentro da String, e se forem diferentes, vai armazenar as informações 
+     * da nova Ave no próximo espaço da String, assim podendo chamar o catálogo
+     * e dar print das informações da Ave, na tela
+     */
     public static void comparacao(int op, Ave []aves){
         switch(op) { 
             case 1: 
@@ -193,6 +216,9 @@ public class FontanaApp{
         }
     }
 
+    /**
+     * Verifica se os aves correspondem a certo mês e printa
+     */
     public static void meses(Anotacao[] notas,String p,Ave[] aves){
         for(int i=0;i<notas.length;i++){
             int j=0;
@@ -208,6 +234,9 @@ public class FontanaApp{
         }
     }
 
+    /**
+     * Define as aves no livro de observação por linha e coluna
+     */
     public static void main(String[] args){
 
         Ave[] aves=new Ave[10];
@@ -242,6 +271,9 @@ public class FontanaApp{
         Anotacao[] notas = new Anotacao[10];                
 
         Scanner in = new Scanner(System.in);
+        /**
+         * Roda o programa até que o usuário decida sair
+         */
         do{
             op=0;          
             System.out.println("\n\t        MENU");
@@ -257,10 +289,17 @@ public class FontanaApp{
             op = in.nextInt();
 
             switch(op){
+                /**
+                 * Mostra o catálogo completo das Aves
+                 */
+                
                 case 1:
                     showcatalogo(aves);
                     break;
 
+                /**
+                 * Anota as informações dentro da Classe Notas
+                 */
                 case 2:
 
                     String escolha;
@@ -287,6 +326,10 @@ public class FontanaApp{
                     }while(j<9 && !escolha.equals("n"));
                     break;
 
+                /**
+                 *Mostrará duas ou mais aves com os mesmo campos para o
+                 *observador, na tela depois do Menu
+                 */
                 case 3:
                     System.out.println("\f\n\t        Qual campo quer comparar?");
                     System.out.println("\t        -------------------------");
@@ -338,6 +381,10 @@ public class FontanaApp{
                     }
                     break;
 
+                /**
+                 * Permite que o usuário saiba quantas aves foram avistadas
+                 * em um determinado Mês
+                 */
                 case 4:
                     int c=0;
                     System.out.println("\f\n\t        Qual mes quer?");
@@ -356,6 +403,9 @@ public class FontanaApp{
                     System.out.println("\t12 - Dezembro");
                     c=in.nextInt();
 
+                    /**
+                     * Printa as informações chamando o método 'meses'
+                     */
                     switch(c){
                         case 1:
                             System.out.println("\f");
@@ -419,6 +469,10 @@ public class FontanaApp{
                     }
                     break;
 
+                /**
+                 * Chama a classe arquivos, verifica se o arquivo pôde ser
+                 * gravado corretamente e avisa o usuário
+                 */
                 case 5:
                     int a=-1;
                     System.out.println("\f\t        Copiando arquivo");
@@ -428,17 +482,23 @@ public class FontanaApp{
                         else
                             x+="Ave: "+notas[k].mostrarAve()+"  Data: " + notas[k].mostrarData()+"\n";
                         if(Arquivo.write(arq,x))
-                            System.out.println("Arquivo gravado cm sucesso!");
+                            System.out.println("Arquivo gravado com sucesso!");
                         else
                             System.out.println("falha");
                         k++;
                     }
                     break;
+                /**
+                 * Lê o arquivo
+                 */
                 case 6:
                     System.out.println("\f\t        Arquivo");
                     System.out.println(x);
                     break;
                     
+                /**
+                 * Apaga o arquivo
+                 */
                 case 7:
                     System.out.println("\fTem certeza que deseja apagar o arquivo?(s/n)");
                     String apagar=in.next();

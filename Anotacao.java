@@ -1,9 +1,7 @@
 
 /**
- * Write a description of class Anotacao here.
- *
- * @author (your name)
- * @version (a version number or a date)
+ * Anota o que o usuário escrever, armazena o mês, e verifica qual ave foi
+ * encontrada
  */
 public class Anotacao{
     private String data;
@@ -23,6 +21,9 @@ public class Anotacao{
             this.ave=p;
     }
 
+    /**
+     * Define o Mês inserido pelo usuário na data, usando 'char'
+     */
     public void anotarData(String y){
         this.data=y;
         if(data==null) {throw new  IllegalArgumentException("Data null");}
@@ -101,6 +102,10 @@ public class Anotacao{
         return this.ave;
     }
     
+    /**
+     * Verifica se o nome da ave observada corresponde com algum dos seus
+     * nomes em inglês, português ou Latim dentro do catálogo
+     */
     public int mostrarAve(Ave []aves){
         for(int i=0;i<aves.length;i++){
             if(aves[i]==null)break;

@@ -5,10 +5,7 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.io.*;
 /**
- * Escreva uma descrição da classe Arquivo aqui.
- * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ * Grava as informações do programa pra dentro de um arquivo .txt e as lê
  */
 public class Arquivo{
     public static String Read(String caminho){

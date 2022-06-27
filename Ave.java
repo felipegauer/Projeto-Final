@@ -1,9 +1,6 @@
 
 /**
- * Escreva uma descrição da classe Aves aqui.
- * 
- * @author (seu nome) 
- * @version (um número da versão ou uma data)
+ *A classe define as características de cada ave e as imprime quando solicitado 
  */
 public class Ave{
     private String ave;
